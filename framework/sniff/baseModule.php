@@ -52,7 +52,7 @@ abstract class baseModule {
    * @var array
    * @access public
    */
-  public static $main_template_vars = array();
+  public $main_template_vars = array();
 
   /**
    * Abstract method for reading page argument.

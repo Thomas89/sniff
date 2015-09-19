@@ -3,9 +3,9 @@
  * Application configuration.
  */
 class config_web{
-  public static $application_name = "";
+  public static $application_name = "Simple MVC";
   public static $application_version = "";
-  public static $framework_dir = "framework";
+  public static $framework_dir = "../../framework/sniff";
   public static $module_dir = "module";
   public static $query_dir = "query";
   public static $template_dir = "template";
