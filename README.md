@@ -1,6 +1,8 @@
 # SNiFF
 Stands for Simple Nice Flexible Framework.
-It is the small and lightweight PHP framework with MVC pattern.
+It is the small, minimalist, and lightweight PHP framework
+with MVC pattern.
 
-Currently under development and only the core is available.
-Examples and documentation will be coming soon.
+Currently under development in the core, examples, and
+also the documentation.
+More useful information will be coming soon.
