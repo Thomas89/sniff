@@ -7,10 +7,10 @@ defined("INDEX") or die("");
   <p><b><?php echo $message ?></b></p>
 <?php endif; ?>
 <form method="post">
-  User ID:<br/>
-  <input type="text" name="user_id" /><br/>
-  Realname:<br/>
-  <input type="text" name="user_name" /><br/>
+  Group ID:<br/>
+  <input type="text" name="group_id" /><br/>
+  Group name:<br/>
+  <input type="text" name="group_name" /><br/>
   <br/>
   <input type="submit" name="submit" value="Save" />
 </form>

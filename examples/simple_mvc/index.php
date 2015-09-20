@@ -1,12 +1,21 @@
 <?php
+/**
+ * ABOUT THIS EXAMPLE
+ *
+ * This example will show you how to implement simple MVC.
+ * We have to controller for displaying User and Group.
+ * They will be loaded as requested in a parent/main template.
+ */
+
+
+// Define this is the index page.
+// All other controller, model, and view files will be included from this file.
 define("INDEX", 1);
 
 // Include the required configuration files.
 require_once("config/config_web.php");
-require_once("config/config_dbmysql.php");
 
 // Include the required framework files.
-require_once(config_web::$framework_dir . "/db.php");
 require_once(config_web::$framework_dir . "/http.php");
 require_once(config_web::$framework_dir . "/baseModule.php");
 require_once(config_web::$framework_dir . "/templateEngine.php");
@@ -42,8 +51,8 @@ if ($controller !== NULL) {
 
     // Main menu for main template
     $class->main_template_vars["menu"] = array(
-      "View" => "?action=view",
-      "Add" => "?action=add",
+      "User" => "?module=user",
+      "Group" => "?module=group",
     );
 
     // Call the controller's main function and pass the action for.

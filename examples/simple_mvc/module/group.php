@@ -3,15 +3,15 @@
 defined("INDEX") or die("");
 
 /**
- * Class user
+ * Class group
  *
- * This is the controller class for user.
+ * This is the controller class for group.
  * We must declare three abstract methods as public:
  * - switcher
  * - getAccessRule
  * - checkPermission
  */
-class user extends baseModule {
+class group extends baseModule {
   /**
    * The abstract method that should be declared.
    * Main controller method. It will check which action will be executed.
@@ -22,8 +22,8 @@ class user extends baseModule {
   public function switcher($action) {
     // Check the controller action that will be called.
     // In this example we only use two actions:
-    // - Display user list
-    // - Display the form to add new user
+    // - Display group list
+    // - Display the form to add new group
     switch($action) {
       case NULL:
       case "view":
@@ -58,42 +58,42 @@ class user extends baseModule {
   }
 
   /**
-   * Action for viewing the list of users.
+   * Action for viewing the list of groups.
    *
    * @access private
    */
   private function view() {
     // Set the main page title in main template.
-    $this->main_template_vars["page_title"] = config_web::$application_name . " - User list";
+    $this->main_template_vars["page_title"] = config_web::$application_name . " - Group list";
 
-    // Sample data for user list. We don't use database at this moment.
-    $user_list = array(
+    // Sample data for group list. We don't use database at this moment.
+    $group_list = array(
       0 => array(
-        "id" => "A001",
-        "name" => "John Doe",
+        "id" => "G001",
+        "name" => "Administrator",
       ),
       1 => array(
-        "id" => "A002",
-        "name" => "Jane Doe",
+        "id" => "G002",
+        "name" => "Power User",
       ),
       2 => array(
-        "id" => "A003",
-        "name" => "Foo Bar",
+        "id" => "G003",
+        "name" => "Visitor",
       ),
     );
 
     // Load the view and pass the variable.
-    $this->setTemplate("user/view.tpl.php",
+    $this->setTemplate("group/view.tpl.php",
       array(
-        "title" => "User list",
-        "user_list" => $user_list,
+        "title" => "Group list",
+        "group_list" => $group_list,
       )
     );
     $this->displayOutput();
   }
 
   /**
-   * Action for displaying the add new user form.
+   * Action for displaying the add new group form.
    *
    * @access private
    */
@@ -108,12 +108,12 @@ class user extends baseModule {
     }
 
     // Set the main page title in main template.
-    $this->main_template_vars["page_title"] = config_web::$application_name . " - Add new user";
+    $this->main_template_vars["page_title"] = config_web::$application_name . " - Add new group";
 
     // Load the view and pass the variable.
-    $this->setTemplate("user/form.tpl.php",
+    $this->setTemplate("group/form.tpl.php",
       array(
-        "title" => "Add new user",
+        "title" => "Add new group",
         "message" => $message,
       )
     );
