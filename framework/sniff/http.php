@@ -36,6 +36,7 @@ class http {
   /**
    * Method for retreiving $_GET content safely to avoid NOTICE error.
    *
+   * @access public
    * @param string $var The GET variable name.
    * @param string $default The default content if GET variable is not available. Default to "null".
    * @param boolean $trim Determine if the value will be trimmed from whitespace. Default to "false".
