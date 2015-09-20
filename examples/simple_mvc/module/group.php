@@ -1,15 +1,20 @@
 <?php
+/**
+ * This is the controller class for managing group.
+ * We must declare three abstract methods as public:
+ * - switcher
+ * - getAccessRule
+ * - checkPermission
+ *
+ * @author Lucky <bogeyman2007@gmail.com>
+ * @filesource group.php
+ */
+
 // Prevent direct access
 defined("INDEX") or die("");
 
 /**
  * Class group
- *
- * This is the controller class for group.
- * We must declare three abstract methods as public:
- * - switcher
- * - getAccessRule
- * - checkPermission
  */
 class group extends baseModule {
   /**

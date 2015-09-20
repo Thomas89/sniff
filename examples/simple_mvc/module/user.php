@@ -1,15 +1,20 @@
 <?php
+/**
+ * This is the controller class for managing user.
+ * We must declare three abstract methods as public:
+ * - switcher
+ * - getAccessRule
+ * - checkPermission
+ * 
+ * @author Lucky <bogeyman2007@gmail.com>
+ * @filesource user.php
+ */
+
 // Prevent direct access
 defined("INDEX") or die("");
 
 /**
  * Class user
- *
- * This is the controller class for user.
- * We must declare three abstract methods as public:
- * - switcher
- * - getAccessRule
- * - checkPermission
  */
 class user extends baseModule {
   /**
