@@ -2,14 +2,17 @@
 /**
  * ABOUT THIS EXAMPLE
  *
- * This example will show you how to implement simple MVC.
- * We have to controller for displaying User and Group.
- * They will be loaded as requested in a parent/main template.
+ * This example will show you how to implement a simple MVC
+ * application using SNiFF.
+ * We have two controller for displaying User and Group.
+ * They will be loaded as requested in a parent/main template
+ * file.
  */
 
 
 // Define this is the index page.
-// All other controller, model, and view files will be included from this file.
+// All other controller, model, and view files will be included from this
+// file.
 define("INDEX", 1);
 
 // Include the required configuration files.
@@ -20,7 +23,8 @@ require_once(config_web::$framework_dir . "/http.php");
 require_once(config_web::$framework_dir . "/baseModule.php");
 require_once(config_web::$framework_dir . "/templateEngine.php");
 
-// Check if the request for specific controller is passed in the query string.
+// Check if the request for specific controller is passed in the query
+// string.
 if (isset($_GET['module'])) {
   switch ($_GET['module']) {
     case "user":
@@ -55,7 +59,8 @@ if ($controller !== NULL) {
       "Group" => "?module=group",
     );
 
-    // Call the controller's main function and pass the action for.
+    // Call the controller's main function and pass the action query
+    // string so the controller can decide which method will be executed.
     $class->switcher(http::get("action"));
   }
   else {
