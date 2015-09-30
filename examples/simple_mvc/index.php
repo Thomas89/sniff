@@ -4,15 +4,15 @@
  *
  * This example will show you how to implement a simple MVC
  * application using SNiFF.
- * We have two controller for displaying User and Group.
- * They will be loaded as requested in a parent/main template
- * file.
+ * We have two controller for displaying User and Group. They will be
+ * loaded as requested in a parent/main template file. The default main
+ * template file is define in config/config_web.php file.
  */
 
 
 // Define this is the index page.
-// All other controller, model, and view files will be included from this
-// file.
+// All other controller, model, and view files will be included from
+// this file.
 define("INDEX", 1);
 
 // Include the required configuration files.
@@ -60,7 +60,8 @@ if ($controller !== NULL) {
     );
 
     // Call the controller's main function and pass the action query
-    // string so the controller can decide which method will be executed.
+    // string so the controller can decide which method will be
+    // executed.
     $class->switcher(http::get("action"));
   }
   else {
