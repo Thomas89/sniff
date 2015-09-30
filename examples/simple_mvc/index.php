@@ -5,8 +5,8 @@
  * This example will show you how to implement a simple MVC
  * application using SNiFF.
  * We have two controller for displaying User and Group. They will be
- * loaded as requested in a parent/main template file. The default main
- * template file is define in config/config_web.php file.
+ * loaded as requested inside a parent/main template file. The default
+ * main template file is define in config/config_web.php file.
  */
 
 

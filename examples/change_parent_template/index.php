@@ -5,8 +5,9 @@
  * This example will show you how to implement a simple MVC application
  * using SNiFF.
  * We have two controller for displaying User and Group. They will be
- * loaded as requested in a parent/main template file like in simple_mvc
- * example but we can easily change the main template file on the fly.
+ * loaded as requested inside a parent/main template file like in
+ * simple_mvc example, but we can easily change the main template file
+ * on demand.
  */
 
 
