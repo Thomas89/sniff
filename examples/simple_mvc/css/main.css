@@ -12,7 +12,7 @@ a {
 /** BEGIN: Main menu **/
 ul#menu {
   padding: 10px;
-  margin: 0;
+  margin: 0 0 10px 0;
   background-color: #369;
 }
 
@@ -45,9 +45,5 @@ ul#menu li a {
 
 #content .table .header {
   background-color: #eee;
-}
-
-#breadcrumb {
-  margin-top: 10px;
 }
 /** END: Main content **/
