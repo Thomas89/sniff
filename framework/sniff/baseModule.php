@@ -15,6 +15,14 @@
  */
 abstract class baseModule {
   /**
+   * Store web root URL and use it when necessary.
+   *
+   * @var string
+   * @access private
+   */
+  private $web_root = "";
+
+  /**
    * Decide to display main template or not. Default to "true".
    *
    * @var boolean
@@ -219,7 +227,7 @@ abstract class baseModule {
    * @param array $data The breadcrumb data in associative array like following.
    *   Array(
    *     [backlink text 1] => [backlink URL 1],
-   *     [backlink text 2] => [backlink URL 2].
+   *     [backlink text 2] => [backlink URL 2],
    *     ...
    *   )
    * @param string $separator The separator between breadcrumb items. Default to "&raquo;".
@@ -241,5 +249,38 @@ abstract class baseModule {
     }
 
     return '<div class="breadcrumb">'.implode(" ".$separator." ", $breadcrumb).'</div>';
+  }
+
+  /**
+   * Function to generate HTML tag for including Javascript or CSS file.
+   *
+   * @access protected
+   * @param array $path The path of Javascript or CSS file.
+   *   Array(
+   *     [path1],
+   *     [path2],
+   *     ...
+   *   )
+   * @param string $type The type of files (js or css).
+   * @return string The HTML tag for including Javascript or CSS file.
+   */
+  protected function addJsCss($path=array(), $type) {
+    if(!is_array($path)){
+      return "";
+    }
+
+    $str_tag = "";
+    foreach ($path as $p) {
+      if($p != ''){
+        if ($type == "js") {
+          $str_tag .= '<script languange="javascript" type="text/javascript" src="' . $p . '"></script>\n';
+        }
+        elseif ($type == "css") {
+          $str_tag .= '<link rel="stylesheet" type="text/css" href="' . $p . '" />' . "\n";
+        }
+      }
+    }
+
+    return $str_tag;
   }
 }
