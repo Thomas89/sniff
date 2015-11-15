@@ -6,38 +6,20 @@ defined("INDEX") or die("");
 <html>
 <head>
   <title><?php echo $page_title ?></title>
-  <style>
-  a {
-    color:#369;
-  }
-
-  ul.menu {
-    padding: 0;
-    margin: 0;
-  }
-
-  #sidebar {
-    float: left;
-    width: 25%;
-  }
-
-  #content {
-    float: left;
-    width: 75%;
-  }
-  </style>
+  <?php echo $css ?>
 </head>
 <body>
-  <p>The second template using sidebar menu.</p>
   <div id="sidebar">
-    <p><b>Menu</b></p>
+    <p class="title"><b>Menu</b></p>
     <ul class="menu">
       <?php foreach($menu as $title=>$link): ?>
         <li><a href="<?php echo $link ?>"><?php echo $title ?></a></li>
       <?php endforeach; ?>
     </ul>
   </div>
+  <div id="breadcrumb"><?php echo $breadcrumb ?></div>
   <div id="content">
+    <p><i>The second template using sidebar menu.</i></p>
     <?php echo $content ?>
   </div>
 </body>

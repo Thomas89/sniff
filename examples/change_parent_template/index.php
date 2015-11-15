@@ -9,6 +9,11 @@
  * data mode, the main template will be switched to the one that use
  * left sidebar menu. Otherwise the template with the top menu will be
  * loaded.
+ * 
+ * Regarding to the method we change the main template file, we can
+ * also load the required additional CSS file in specific action. In
+ * this example, we load one additional CSS file when we load the 2
+ * column template file.
  */
 
 

@@ -1,0 +1,30 @@
+/** BEGIN: Two column content **/
+#sidebar {
+  float: left;
+  width: 20%;
+  border-bottom: 1px solid #ccc;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+#sidebar ul li {
+  padding: 5px;
+}
+
+#sidebar .title {
+  color: #fff;
+  font-weight: bold;
+  background-color: #369;
+  text-align: center;
+  padding: 5px;
+}
+
+#content {
+  float: left;
+  width: 75%;
+  margin-left: 5%;
+}
+/** END: Two column content **/

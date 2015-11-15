@@ -6,6 +6,8 @@
  * - getAccessRule
  * - checkPermission
  * 
+ * Constructor method should be used to initialized some variables.
+ * 
  * @author Lucky <bogeyman2007@gmail.com>
  * @filesource user.php
  */
@@ -17,6 +19,24 @@ defined("INDEX") or die("");
  * Class user
  */
 class user extends baseModule {
+  /**
+   * Constructor function. We can initialize some variables or anything
+   * here.
+   */
+  public function __construct(){
+    // Initialize some required variables such as web root URL,
+    // Javascript and CSS files, and also breadcrumb link.
+    $this->web_root = http::getWebRoot();
+    $this->main_template_vars["css"] = "";
+    $this->main_template_vars["js"] = "";
+    $this->main_template_vars["breadcrumb"] = "";
+
+    // Include main CSS here.
+    $this->main_template_vars["css"] = $this->addJsCss(array(
+      $this->web_root . "css/main.css",
+    ), "css");
+  }
+
   /**
    * The abstract method that should be declared.
    * Main controller method. It will check which action will be executed.
@@ -117,6 +137,11 @@ class user extends baseModule {
 
     // Set the main page title in main template.
     $this->main_template_vars["page_title"] = config_web::$application_name . " - Add new user";
+
+    // Load an additional CSS files. Add new but DON'T replace current variable.
+    $this->main_template_vars["css"] .= $this->addJsCss(array(
+      $this->web_root . "css/column-two.css",
+    ), "css");
 
     // Load the view and pass the variable.
     $this->setTemplate("user/form.tpl.php",
