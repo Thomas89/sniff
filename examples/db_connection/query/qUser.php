@@ -128,10 +128,10 @@ class qUser {
   }
 
   /**
-   * Method for inserting new user data.
+   * Method for deleting user data.
    *
    * @access public
-   * @param string $name The new user name.
+   * @param int $id The ID of user record that will be deleted.
    * @return boolean TRUE when the process is success or FALSE when failed.
    */
   public function delete($id) {
