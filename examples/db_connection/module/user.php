@@ -49,7 +49,6 @@ class user extends baseModule {
     // Check the controller action that will be called.
     // In this example we only use two actions:
     // - Display user list
-    // - Display the form to add new user
     switch($action) {
       case NULL:
       case "view":
