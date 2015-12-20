@@ -1,0 +1,49 @@
+/** BEGIN: Common HTML tag **/
+body {
+  font-family: arial;
+}
+
+a {
+  color:#369;
+}
+/** END: Common HTML tag **/
+
+
+/** BEGIN: Main menu **/
+ul#menu {
+  padding: 10px;
+  margin: 0 0 10px 0;
+  background-color: #369;
+}
+
+ul#menu li {
+  display: inline;
+  padding-right: 10px;
+}
+
+ul#menu li a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+/** END: Main menu **/
+
+
+/** BEGIN: Main content **/
+#content h2 {
+  color: #777;
+}
+
+#content .table.collapse {
+  border-collapse: collapse;
+}
+
+#content .table.collapse td,
+#content .table.collapse th {
+  border: 1px solid #ccc;
+}
+
+#content .table .header {
+  background-color: #eee;
+}
+/** END: Main content **/
