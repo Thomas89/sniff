@@ -34,7 +34,7 @@ class dbmysql{
   private function __construct($host, $user, $password, $database){
     $this->con=@mysqli_connect($host, $user, $password, $database);
     if(!$this->con){
-      throw new Exception(mysqli_error($this->con), "2".mysqli_errno($this->con));
+      throw new Exception("DATABASE CONNECTION ERROR! Please check your configuration file.");
     }
   }
 

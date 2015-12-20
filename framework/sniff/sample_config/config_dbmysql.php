@@ -2,7 +2,7 @@
 /**
  * Database connection configuration for MySQL.
  */
-class config_mysql{
+class config_dbmysql{
   public $dbHost = "localhost";
   public $dbUser = "root";
   public $dbPass = "";

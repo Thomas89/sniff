@@ -11,15 +11,15 @@
  */
 class db {
   /**
-   * Holds connection object references
+   * Holds connection object references.
    */
   private static $objects = array();
 
   /**
-   * Constructor
+   * Constructor method.
    */
   private function __construct() {
-    // Blank constructor so there will be no more than one instance.
+    // Blank and private constructor so there will be no more than one instance.
   }
 
   /**
@@ -29,10 +29,11 @@ class db {
    * @param string $db_type The database type. This string will determine which database type will be used. Also configuration file that will be used if $config_class is empty. If it's "null", it will use the default database type in config_web class.
    * @param string $framework_dir The config class name. Default to "null". If it's "null", it will use "config_" . $db_type.
    * @param string $framework_dir The framework location. Default to "null". If it's "null", it will use the location defined in config_web class.
+   * @return object The database connection object.
    */
   public static function getObject($db_type = null, $config_class = null, $framework_dir = null) {
     if ($db_type == null) {
-      $db_type == config_web::$default_db_type;
+      $db_type = config_web::$default_db_type;
     }
 
     $class = "db".$db_type;

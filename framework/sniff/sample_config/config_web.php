@@ -5,10 +5,19 @@
 class config_web{
   public static $application_name = "";
   public static $application_version = "";
+
+  // Folder for storing Framework classes.
   public static $framework_dir = "framework";
+
+  // Folder for storing Controller classes.
   public static $module_dir = "module";
+
+  // Folder for storing Model classes.
   public static $query_dir = "query";
+
+  // Folder for storing View files
   public static $template_dir = "template";
+
   public static $debug_mode = true;
   public static $home_page = "home";
   public static $default_group_id = array(0);
