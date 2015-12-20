@@ -5,10 +5,9 @@
  * This example will show you how to implement a simple Database
  * Connection application using SNiFF.
  *
- * The database connection will only select one table from database then
- * display the result into HTML table that we prepared in template.
- * In this example, we also will learn how to create Model to store the
- * queries needed for our application.
+ * In this example we will learn how to create the simple CRUD using
+ * SNiFF, we also will learn how to create Model to store the queries
+ * needed for our application.
  */
 
 

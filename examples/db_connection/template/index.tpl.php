@@ -9,6 +9,7 @@ defined("INDEX") or die("");
   <?php echo $css ?>
 </head>
 <body>
+  <div id="breadcrumb"><?php echo $breadcrumb ?></div>
   <div id="content">
     <?php echo $content ?>
   </div>
