@@ -35,11 +35,11 @@ class dbmssql{
     $this->con=@mssql_connect($host, $user, $password);
     if($this->con){
       if(!@mssql_select_db($database, $this->con)){
-        throw new Exception(mssql_get_last_message());
+        throw new Exception("ERROR WHEN OPENING DATABASE! Please check your configuration file.");
       }
     }
     else{
-      throw new Exception(mssql_get_last_message());
+      throw new Exception("DATABASE CONNECTION ERROR! Please check your configuration file.");
     }
   }
 

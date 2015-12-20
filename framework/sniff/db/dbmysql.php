@@ -80,7 +80,7 @@ class dbmysql{
   public function query($sql){
     $result=@mysqli_query($this->con,$sql);
     if(!$result){
-      throw new Exception(mysqli_error($this->con), "2".mysqli_errno($this->con));
+      throw new Exception(mysqli_error($this->con));
     }
 
     return $result;
@@ -99,7 +99,7 @@ class dbmysql{
   public function pagerQuery($sql, $rowsPerPage, &$page, &$totalPages){
     $result=@mysqli_query($this->con,$sql);
     if(!$result){
-      throw new Exception(mysqli_error($this->con), "2".mysqli_errno($this->con));
+      throw new Exception(mysqli_error($this->con));
     }
 
     $totalRows=$this->affectedRows();
@@ -124,7 +124,7 @@ class dbmysql{
     $result=@mysqli_query($this->con,$sql." LIMIT ".$page*$rowsPerPage.", ".$rowsPerPage);
     $page+=1;
     if(!$result){
-      throw new Exception(mysqli_error($this->con), "2".mysqli_errno($this->con));
+      throw new Exception(mysqli_error($this->con));
     }
 
     return $result;
@@ -179,7 +179,7 @@ class dbmysql{
    */
   public function execute($sql){
     if(!@mysqli_query($this->con, $sql)){
-      throw new Exception(mysqli_error($this->con), "2".mysqli_errno($this->con));
+      throw new Exception(mysqli_error($this->con));
     }
 
     return true;
@@ -220,7 +220,7 @@ class dbmysql{
    */
   public function begin(){
     if(!@mysqli_autocommit($this->con, FALSE)){
-      throw new Exception(mysqli_error($this->con), "2".mysqli_errno($this->con));
+      throw new Exception(mysqli_error($this->con));
     }
   }
 
@@ -232,7 +232,7 @@ class dbmysql{
    */
   public function commit(){
     if(!@mysqli_commit($this->con)){
-      throw new Exception(mysqli_error($this->con), "2".mysqli_errno($this->con));
+      throw new Exception(mysqli_error($this->con));
     }
 
     return true;
@@ -246,7 +246,7 @@ class dbmysql{
    */
   public function rollback(){
     if(!@mysqli_rollback($this->con)){
-      throw new Exception(mysqli_error($this->con), "2".mysqli_errno($this->con));
+      throw new Exception(mysqli_error($this->con));
     }
 
     return true;
@@ -484,7 +484,7 @@ class dbmysql{
       while(mysqli_next_result($this->con));
     }
     else{
-      throw new Exception(mysqli_error($this->con), "2".mysqli_errno($this->con));
+      throw new Exception(mysqli_error($this->con));
     }
 
     // Return the rows
@@ -547,7 +547,7 @@ class dbmysql{
     //echo $sql;
     if(!@mysqli_query($this->con, $sql)){
       //echo $sql;
-      throw new Exception(mysqli_error($this->con), "2".mysqli_errno($this->con));
+      throw new Exception(mysqli_error($this->con));
     }
 
     // Return the execution result
@@ -621,7 +621,7 @@ class dbmysql{
    */
   public function close(){
     if(!@mysqli_close($this->con)){
-      throw new Exception(mysqli_error($this->con), "2".mysqli_errno($this->con));
+      throw new Exception(mysqli_error($this->con));
     }
   }
 }
